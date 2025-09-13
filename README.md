@@ -11,6 +11,36 @@ It includes database modeling, SQL views, interactive dashboards, and Agile proj
 
 ---
 
+## 📄 Dataset Description
+
+The Uber rides dataset contains the following columns:
+
+| Column Name                     | Data Type       | Description                                                                 |
+|---------------------------------|----------------|-----------------------------------------------------------------------------|
+| Date                            | DATE           | Date of the booking                                                         |
+| Time                            | TIME           | Time of the booking                                                         |
+| Booking ID                       | VARCHAR/String | Unique identifier for each booking                                          |
+| Booking Status                   | VARCHAR/String | Status of the booking (e.g., Completed, Incomplete, No Driver Found)       |
+| Customer ID                      | VARCHAR/String | Unique identifier for the customer                                          |
+| Vehicle Type                     | VARCHAR/String | Type of vehicle assigned (e.g., eBike, Go Sedan, Auto)                     |
+| Pickup Location                  | VARCHAR/String | Starting location of the ride                                              |
+| Drop Location                    | VARCHAR/String | Destination location of the ride                                           |
+| Avg VTAT                         | NUMERIC/Float  | Average Vehicle Time to Arrival (minutes)                                   |
+| Avg CTAT                         | NUMERIC/Float  | Average Customer Time to Arrival (minutes)                                  |
+| Cancelled Rides by Customer      | INTEGER        | Number of rides cancelled by the customer                                   |
+| Reason for cancelling by Customer| VARCHAR/String | Reason given by customer for cancellation                                   |
+| Cancelled Rides by Driver        | INTEGER        | Number of rides cancelled by the driver                                     |
+| Driver Cancellation Reason       | VARCHAR/String | Reason given by driver for cancellation                                     |
+| Incomplete Rides                 | INTEGER        | Number of rides marked as incomplete                                        |
+| Incomplete Rides Reason          | VARCHAR/String | Reason for ride being incomplete                                           |
+| Booking Value                    | NUMERIC/Float  | Fare value of the booking                                                  |
+| Ride Distance                    | NUMERIC/Float  | Distance travelled during the ride (km)                                     |
+| Driver Ratings                   | NUMERIC/Float  | Rating given to the driver (out of 5)                                       |
+| Customer Rating                  | NUMERIC/Float  | Rating given to the customer (out of 5)                                     |
+| Payment Method                   | VARCHAR/String | Payment method used (e.g., UPI, Debit Card)                                 |
+
+---
+
 ## 📊 Features  
 
 - **Data Modeling**  
