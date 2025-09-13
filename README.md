@@ -65,7 +65,8 @@ The Uber rides dataset contains the following columns:
   <img width="1152" height="648" alt="successful booking summary" src="https://github.com/user-attachments/assets/a257c1f9-e55e-4df9-9240-7de165f157f2" />
   <img width="1149" height="645" alt="unsuccessful booking summary" src="https://github.com/user-attachments/assets/6b3076e0-a1d5-437f-ad27-c04e9548f9c5" />
 
-- Scrum Demo Board  
+- Scrum Demo Board
+   <img width="1042" height="413" alt="sprint_table" src="https://github.com/user-attachments/assets/f00fe4e3-8bb2-41e8-a86a-f087ddc87972" />
    <img width="770" height="703" alt="backlog" src="https://github.com/user-attachments/assets/2e1fef07-d5ee-42de-8ec0-babcfe7d2021" />
    <img width="989" height="510" alt="board_view" src="https://github.com/user-attachments/assets/ae886bfe-f08d-4ff7-a685-f8d527c1bd12" />
 
