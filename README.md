@@ -3,25 +3,6 @@
 This project demonstrates **end-to-end data analytics** using PostgreSQL, Power BI, and Scrum (Jira).  
 It includes database modeling, SQL views, interactive dashboards, and Agile project tracking.  
 
----
-
-## 📂 Project Structure  
-Uber-Rides-Analytics/
-│── sample dataste.csv
-│── sql/
-│ ├── create_tables.sql # Schema definition (tables)
-│ ├── cancel_reason_view.sql
-│ ├── daily_rides_view.sql
-│ ├── revenue_summary_view.sql
-│ ├── ride_summary_view.sql
-│── Powerbi/
-│ └── Dashboard.pbix # Power BI dashboard file
-│── scrum_demo/
-│ └── screenshots
-│── README.md
-
----
-
 ## 🛠️ Tech Stack  
 
 - **Database**: PostgreSQL (pgAdmin)  
