@@ -61,7 +61,7 @@ The Uber rides dataset contains the following columns:
 
 ## 📸 Screenshots  
 
-- Dashboard Overview  
+- Interactive Dashboard Overview  
   <img width="1152" height="648" alt="successful booking summary" src="https://github.com/user-attachments/assets/a257c1f9-e55e-4df9-9240-7de165f157f2" />
   <img width="1149" height="645" alt="unsuccessful booking summary" src="https://github.com/user-attachments/assets/6b3076e0-a1d5-437f-ad27-c04e9548f9c5" />
 
