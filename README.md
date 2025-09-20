@@ -48,7 +48,7 @@ To optimize for data integrity and reduce redundancy, the original flat dataset 
 
 | Column Name                     | Data Type       | Description                                                                 |
 |---------------------------------|----------------|-----------------------------------------------------------------------------|
-| Booking ID                       | `VARCHAR/String` | Unique identifier for each booking  (linked to `rides` table)               |
+| Booking ID                       | `VARCHAR/String` | Unique identifier for each booking  (foreign key)                           |
 | Booking Status                   | `VARCHAR/String` | Status of the booking (e.g., Completed, Incomplete, No Driver Found)       |
 | Cancelled Rides by Customer      | `INTEGER`        | Number of rides cancelled by the customer                                   |
 | Reason for cancelling by Customer| `VARCHAR/String` | Reason given by customer for cancellation                                   |
