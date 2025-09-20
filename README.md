@@ -1,19 +1,31 @@
 # 🚖 Uber Rides Analytics Dashboard  
 
-This project demonstrates **end-to-end data analytics** using PostgreSQL, Power BI, and Scrum (Jira).  
-It includes database modeling, SQL views, interactive dashboards, and Agile project tracking.  
+This project demonstrates a complete, end-to-end data analytics pipeline. It transforms raw Uber ride data into actionable business insights by leveraging a normalized PostgreSQL database, advanced SQL views, and an interactive Power BI dashboard. The project workflow is managed using Agile/Scrum principles in Jira.
 
 ## 🛠️ Tech Stack  
 
 - **Database**: PostgreSQL (pgAdmin)  
 - **Visualization**: Power BI  
-- **Project Management**: Jira (Scrum demo board)  
+- **Project Management**: Jira (Scrum demo board)
 
 ---
 
-## 📄 Dataset Description
+## 📄 Project Architecture & Data Flow
 
-The Uber rides dataset contains the following columns:
+The project follows a structured data pipeline to ensure scalability and maintainability:
+
+**Raw Data (CSV)** → **PostgreSQL Database* → **SQL Analytical View** → **Power BI Dashboard**
+
+This architecture separates raw data storage from the analytical layer, allowing for efficient querying and simplified dashboard development in Power BI.
+
+---
+
+## 📄 Database Schema Design
+
+To optimize for data integrity and reduce redundancy, the original flat dataset was normalized into a relational schema with two primary tables. This design improves scalability and simplifies data management.
+
+`rides` Table
+- Stores the core transactional details for each ride. `booking_id` is the Primary Key.
 
 | Column Name                     | Data Type       | Description                                                                 |
 |---------------------------------|----------------|-----------------------------------------------------------------------------|
@@ -27,35 +39,42 @@ The Uber rides dataset contains the following columns:
 | Drop Location                    | `VARCHAR/String` | Destination location of the ride                                           |
 | Avg VTAT                         | `NUMERIC/Float`  | Average Vehicle Time to Arrival (minutes)                                   |
 | Avg CTAT                         | `NUMERIC/Float`  | Average Customer Time to Arrival (minutes)                                  |
-| Cancelled Rides by Customer      | `INTEGER`        | Number of rides cancelled by the customer                                   |
-| Reason for cancelling by Customer| `VARCHAR/String` | Reason given by customer for cancellation                                   |
-| Cancelled Rides by Driver        | `INTEGER`        | Number of rides cancelled by the driver                                     |
-| Driver Cancellation Reason       | `VARCHAR/String` | Reason given by driver for cancellation                                     |
-| Incomplete Rides                 | `INTEGER`        | Number of rides marked as incomplete                                        |
-| Incomplete Rides Reason          | `VARCHAR/String` | Reason for ride being incomplete                                           |
 | Booking Value                    | `NUMERIC/Float`  | Fare value of the booking                                                  |
 | Ride Distance                    | `NUMERIC/Float`  | Distance travelled during the ride (km)                                     |
 | Driver Ratings                   | `NUMERIC/Float`  | Rating given to the driver (out of 5)                                       |
 | Customer Rating                  | `NUMERIC/Float`  | Rating given to the customer (out of 5)                                     |
 | Payment Method                   | `VARCHAR/String` | Payment method used (e.g., UPI, Debit Card)                                 |
 
+`cancellations` Table
+- Stores details related to unsuccessful rides, linked to the `rides` table via a foreign key. `booking_id` is the Foreign Key referencing `rides.booking_id`.
+
+| Column Name                     | Data Type       | Description                                                                 |
+|---------------------------------|----------------|-----------------------------------------------------------------------------|
+| Booking ID                       | `VARCHAR/String` | Unique identifier for each booking                                          |
+| Booking Status                   | `VARCHAR/String` | Status of the booking (e.g., Completed, Incomplete, No Driver Found)       |
+| Cancelled Rides by Customer      | `INTEGER`        | Number of rides cancelled by the customer                                   |
+| Reason for cancelling by Customer| `VARCHAR/String` | Reason given by customer for cancellation                                   |
+| Cancelled Rides by Driver        | `INTEGER`        | Number of rides cancelled by the driver                                     |
+| Driver Cancellation Reason       | `VARCHAR/String` | Reason given by driver for cancellation                                     |
+| Incomplete Rides                 | `INTEGER`        | Number of rides marked as incomplete                                        |
+| Incomplete Rides Reason          | `VARCHAR/String` | Reason for ride being incomplete                                           |
+
 ---
 
-## 📊 Features  
+## 📊 Dashboard Features & Insights
 
-- **Data Modeling**  
-  - PostgreSQL schema with tables for customers, drivers, rides, and cancellation reasons.  
-  - SQL views for aggregated insights.  
+- **Successful Rides Analysis**  
+  - KPIs for Total Revenue, Total Rides, and Average Ride Distance.
+  - Trend analysis of revenue and ride volume over time.
+  - Breakdowns by vehicle type, payment method, and pickup/drop locations.
 
-- **Power BI Dashboard**  
-  - Successful rides summary (total rides, revenue, trends).  
-  - Unsuccessful rides summary (driver cancellations, customer cancellations, incomplete rides).  
-  - Cancellation slicers to filter by reason with dynamic counts.  
-  - Date filters to analyze performance by time.  
+- **Unsuccessful Rides Analysis:**  
+  - KPIs for Driver Cancellation Rate and Customer Cancellation Rate.
+  - Root cause analysis using interactive slicers to filter rides by specific cancellation reasons.
+  - Identification of trends and patterns in ride failures.
 
 - **Agile/Scrum Demo**  
-  - Created sample epics, stories, and tasks in Jira.  
-  - Illustrated how analytics work can be tracked using Scrum methodology.  
+  - A sample Jira board illustrates how analytics projects can be structured into epics, user stories, and tasks, enabling clear tracking and iterative development.
 
 ---
 
@@ -63,7 +82,9 @@ The Uber rides dataset contains the following columns:
 
 - Interactive Dashboard Overview  
   <img width="1152" height="648" alt="successful booking summary" src="https://github.com/user-attachments/assets/a257c1f9-e55e-4df9-9240-7de165f157f2" />
-  <img width="1149" height="645" alt="unsuccessful booking summary" src="https://github.com/user-attachments/assets/6b3076e0-a1d5-437f-ad27-c04e9548f9c5" />
+  <img width="1151" height="644" alt="unsuccessful booking summary" src="https://github.com/user-attachments/assets/7c51ef23-2777-4e97-9727-faf4dccbadf1" />
+
+
 
 - Scrum Demo Board
    <img width="1042" height="413" alt="sprint_table" src="https://github.com/user-attachments/assets/f00fe4e3-8bb2-41e8-a86a-f087ddc87972" />
@@ -74,19 +95,19 @@ The Uber rides dataset contains the following columns:
 
 ## 📌 Key Learnings
 
-- **SQL & Data Modeling**
-  - Created normalized PostgreSQL tables for rides, customers, drivers, and cancellations.
-  - Built analytical views to simplify reporting and analysis.
+- **Data Modeling**
+  - Designed a normalized relational schema in PostgreSQL to ensure data integrity and minimize redundancy, moving from a single flat file to a structured database.
 
-- **Data Analysis & Visualization**
-  - Designed interactive Power BI dashboards with slicers and filters.
-  - Calculated success/failure rates and aggregated metrics dynamically.
+- **Advanced SQL**
+  - Developed a complex analytical SQL view using `JOIN` and `CASE` statements to pre-process data, centralize business logic, and optimize queries for reporting.
+
+- **BI & Data Visualization**
+  - Built a dynamic and interactive Power BI dashboard to monitor key business KPIs, enabling root cause analysis of ride cancellations through intuitive filters and slicers.
 
 - **Agile Project Management**
-  - Created Scrum demo boards in Jira with epics, stories, and tasks.
-  - Demonstrated how analytics work can be tracked in an Agile workflow.
-
-- **End-to-End Workflow**
-  - Showcased the full process: raw data → database → analysis → visualization → project tracking.
+  - Demonstrated proficiency in Scrum methodology by structuring the project workflow in Jira, translating business requirements into technical tasks within an Agile framework.
+ 
+- **End-to-End Analytics**
+  - Successfully managed the full data lifecycle: from data modeling and ingestion in PostgreSQL to transformation with SQL and final presentation in a Power BI dashboard.
  
 Dataset source from Kaggle: https://www.kaggle.com/datasets/yashdevladdha/uber-ride-analytics-dashboard
