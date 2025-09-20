@@ -61,9 +61,9 @@ To optimize for data integrity and reduce redundancy, the original flat dataset 
 ## 📊 Dashboard Features & Insights
 
 - **Successful Rides Analysis**  
-  - KPIs for Total Revenue, Total Rides, and Average Ride Distance.
+  - KPIs for Total Revenue, Total Rides, and Average Ride Duration.
   - Trend analysis of revenue and ride volume over time.
-  - Breakdowns by vehicle type, payment method, and pickup/drop locations.
+  - Breakdowns by vehicle type, payment method.
 
 - **Unsuccessful Rides Analysis:**  
   - KPIs for Driver Cancellation Rate and Customer Cancellation Rate.
