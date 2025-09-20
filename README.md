@@ -8,7 +8,7 @@ This project demonstrates a complete, end-to-end data analytics pipeline. It tra
 - **Visualization**: Power BI  
 - **Project Management**: Jira (Scrum demo board)
 
-
+---
 
 ## 📄 Project Architecture & Data Flow
 
@@ -18,9 +18,7 @@ The project follows a structured data pipeline to ensure scalability and maintai
 
 This architecture separates raw data storage from the analytical layer, allowing for efficient querying and simplified dashboard development in Power BI.
 
-
 ---
-
 
 ## 📄 Database Schema Design
 
@@ -61,7 +59,7 @@ To optimize for data integrity and reduce redundancy, the original flat dataset 
 | Incomplete Rides                 | `INTEGER`        | Number of rides marked as incomplete                                        |
 | Incomplete Rides Reason          | `VARCHAR/String` | Reason for ride being incomplete                                           |
 
-
+---
 
 ## 📊 Dashboard Features & Insights
 
@@ -78,6 +76,7 @@ To optimize for data integrity and reduce redundancy, the original flat dataset 
 - **Agile/Scrum Demo**  
   - A sample Jira board illustrates how analytics projects can be structured into epics, user stories, and tasks, enabling clear tracking and iterative development.
 
+---
 
 ## 📸 Screenshots  
 
