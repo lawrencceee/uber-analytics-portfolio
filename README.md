@@ -19,6 +19,8 @@ The project follows a structured data pipeline to ensure scalability and maintai
 This architecture separates raw data storage from the analytical layer, allowing for efficient querying and simplified dashboard development in Power BI.
 
 
+---
+
 
 ## 📄 Database Schema Design
 
@@ -90,6 +92,8 @@ To optimize for data integrity and reduce redundancy, the original flat dataset 
    <img width="770" height="703" alt="backlog" src="https://github.com/user-attachments/assets/2e1fef07-d5ee-42de-8ec0-babcfe7d2021" />
    <img width="989" height="510" alt="board_view" src="https://github.com/user-attachments/assets/ae886bfe-f08d-4ff7-a685-f8d527c1bd12" />
 
+
+---
 
 
 ## 📌 Key Learnings
