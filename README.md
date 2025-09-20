@@ -8,17 +8,17 @@ This project demonstrates a complete, end-to-end data analytics pipeline. It tra
 - **Visualization**: Power BI  
 - **Project Management**: Jira (Scrum demo board)
 
----
+--
 
 ## 📄 Project Architecture & Data Flow
 
 The project follows a structured data pipeline to ensure scalability and maintainability:
 
-**Raw Data (CSV)** → **PostgreSQL Database* → **SQL Analytical View** → **Power BI Dashboard**
+**Raw Data (CSV)** → **PostgreSQL Database** → **SQL Analytical View** → **Power BI Dashboard**
 
 This architecture separates raw data storage from the analytical layer, allowing for efficient querying and simplified dashboard development in Power BI.
 
----
+--
 
 ## 📄 Database Schema Design
 
